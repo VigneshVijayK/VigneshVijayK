@@ -55,6 +55,7 @@ I'm a **Network Security Engineer** based in India, passionate about system-leve
 
 | Project | Description | Tech |
 |--------|-------------|------|
+| [🪟 Disable-HyperV-EVE-NG](https://github.com/VigneshVijayK/Disable-HyperV-EVE-NG) | Disables Hyper-V, VBS, Device Guard, Credential Guard and Memory Integrity |
 | [🪟 HyperV-Installer](https://github.com/VigneshVijayK/HyperV-Installer) | Enable Hyper-V on Windows Home with one PowerShell command | PowerShell |
 | [🔊 infinix-XL422-linux-audio-fix](https://github.com/VigneshVijayK/infinix-XL422-linux-audio-fix) | Linux audio & speaker fix for Infinix INBook X3 Slim | Shell |
 | [⚡ fastboot-press-any-key-fix-linux](https://github.com/VigneshVijayK/fastboot-press-any-key-fix-linux) | Fix USB 3.0 fastboot errors on Linux — kernel-level solution | Shell |
