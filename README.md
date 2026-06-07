@@ -9,8 +9,8 @@
   <a href="https://vigneshvijayk.github.io/VigneshVijayK/" target="_blank">
     <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=github&logoColor=white" />
   </a>
-  <a href="https://www.instagram.com/vignesh_vijay_K" target="_blank">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+  <a href="mailto:vigneshvijaykofficial@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
   <img src="https://komarev.com/ghpvc/?username=VigneshVijayK&style=for-the-badge&color=00c8ff" />
 </p>
@@ -19,42 +19,61 @@
 
 ## 👨‍💻 About Me
 
-I'm a **Network Security Engineer** and **IoT & Surveillance Systems Specialist** based in India, with a passion for AI, automation, and low-level system tinkering. Currently on the path to **CCIE Security**.
+I'm a **Network Security Engineer** and **IoT & Surveillance Systems Specialist** based in Bengaluru, India, with a passion for AI, automation, and low-level system tinkering. Currently advancing toward **CCIE Security**.
 
-- 🔐 Focused on **Network Security** — firewalls, threat analysis, and secure infrastructure design
-- 🎯 Actively preparing for **CCIE Security** — Cisco's expert-level security certification
-- 📡 Specialising in **IoT & Surveillance Systems** — edge devices, cameras, and connected infrastructure
-- 🤖 Enthusiastic about **AI & Automation** — building smart scripts and intelligent systems
-- 🐧 Linux daily driver — kernel-level tinkerer and shell scripting advocate
-- 📱 Android modding — custom ROMs, bootloaders, and low-level device fixes
-- 🪟 Windows automation — PowerShell scripts and system utilities
+- 🔐 **Network Security** — Firewalls (ASA, FortiGate), VPNs, IDS/IPS, network hardening
+- 📡 **Surveillance & IoT** — CCTV system design, Hikvision NVR/DVR/HVR, AI-based surveillance, Raspberry Pi, ESP32
+- 🤖 **AI & Automation** — AI-integrated network automation (Python + Ansible), full-stack AI web development
+- 🐧 **Linux** — RHEL, CentOS, Fedora, Ubuntu, Debian, KVM/QEMU virtualization
+- 📱 **Android Engineering** — SELinux, kernel, GSI, Magisk, KernelSU, TWRP, ADB, Fastboot
+- 💻 **Programming** — Python, Bash, Java, Kotlin, Flutter, PowerShell, Groovy
+- 🎯 Proven **90% first-contact resolution rate** in technical support
 - 💼 Connect with me on [LinkedIn](https://www.linkedin.com/in/vignesh-vijay-k/)
 
 ---
 
 ## 🛠️ Tech Stack
 
-**Networking & Security**
+**Networking**
 
 ![Cisco](https://img.shields.io/badge/Cisco-1BA0D7?style=flat-square&logo=cisco&logoColor=white)
-![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat-square&logo=wireshark&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-![Palo Alto](https://img.shields.io/badge/Palo%20Alto-FA4616?style=flat-square&logo=paloaltonetworks&logoColor=white)
+![Routing](https://img.shields.io/badge/Routing_Switching-005073?style=flat-square)
+![VLAN](https://img.shields.io/badge/VLAN-0099CC?style=flat-square)
+![OSPF](https://img.shields.io/badge/OSPF-FF6600?style=flat-square)
+![BGP](https://img.shields.io/badge/BGP-9933FF?style=flat-square)
+![VPN](https://img.shields.io/badge/VPN-00CC66?style=flat-square)
 
-**AI & Automation**
+**Network Security**
+
+![Firewall](https://img.shields.io/badge/Firewall-FF0000?style=flat-square)
+![FortiGate](https://img.shields.io/badge/FortiGate-EE3124?style=flat-square)
+![ASA](https://img.shields.io/badge/Cisco_ASA-1BA0D7?style=flat-square)
+![IDS/IPS](https://img.shields.io/badge/IDS_IPS-333333?style=flat-square)
+
+**Surveillance & IoT**
+
+![Hikvision](https://img.shields.io/badge/Hikvision-003399?style=flat-square)
+![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-C51A4A?style=flat-square&logo=raspberrypi&logoColor=white)
+![ESP32](https://img.shields.io/badge/ESP32-E7352C?style=flat-square&logo=espressif&logoColor=white)
+![CCTV](https://img.shields.io/badge/CCTV_Systems-444444?style=flat-square)
+
+**Programming & Scripting**
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnu-bash&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
 ![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white)
-![Batch](https://img.shields.io/badge/Batch-4D4D4D?style=flat-square&logo=windows-terminal&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
 
 **Platforms & Tools**
 
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=flat-square&logo=windows&logoColor=white)
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
-![IoT](https://img.shields.io/badge/IoT-00979D?style=flat-square&logo=arduino&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
 
 ---
 
@@ -62,13 +81,16 @@ I'm a **Network Security Engineer** and **IoT & Surveillance Systems Specialist*
 
 | Project | Description | Tech |
 |--------|-------------|------|
-| [🪟 HyperV-Installer](https://github.com/VigneshVijayK/HyperV-Installer) | One-command PowerShell script to enable Hyper-V on Windows Home edition — no manual steps needed | PowerShell |
-| [🔧 Disable-HyperV-EVE-NG](https://github.com/VigneshVijayK/Disable-HyperV-EVE-NG) | Fully automated script to disable Hyper-V, VBS, Device Guard, Credential Guard and Memory Integrity — frees VT-x/AMD-V so EVE-NG, VMware, GNS3, or VirtualBox run without conflicts | PowerShell |
-| [🔊 infinix-XL422-linux-audio-fix](https://github.com/VigneshVijayK/infinix-XL422-linux-audio-fix) | Fixes broken audio and speaker output on the Infinix INBook X3 Slim (XL422) running Linux | Shell |
-| [⚡ fastboot-press-any-key-fix-linux](https://github.com/VigneshVijayK/fastboot-press-any-key-fix-linux) | Kernel-level fix for the USB 3.0 "press any key" hang during fastboot on Linux systems | Shell |
-| [🤖 AI-Attendance](https://github.com/VigneshVijayK/AI-Attendance) | AI-powered attendance tracking system using face recognition — ideal for IoT-integrated environments | Python |
-| [📱 beryllium-tools](https://github.com/VigneshVijayK/beryllium-tools) | Collection of flashing and utility tools for the Poco F1 (codenamed Beryllium) | Batch |
-| [🔓 fake_encryption_and_bootloader_lock](https://github.com/VigneshVijayK/fake_encryption_and_bootloader_lock) | Research project exploring Android security — bypassing encryption and bootloader lock via root | Shell |
+| [🧾 BillMe](https://github.com/VigneshVijayK/BillMe-Kotlin) | Native Android billing app with full CRUD, Material Design UI, and full-stack web version | Kotlin / Android / Next.js |
+| [⬇️ AnyDownload](https://www.anydownload.site/) | Multi-platform media downloading tool supporting popular streaming and social media platforms | Python / Web |
+| [🖥️ Debian KVM GUI Setup](https://github.com/VigneshVijayK/debian-kvm-gui-setup) | Fully automated 11-step Bash script to install KVM/QEMU with virt-manager on any Debian-based distro | Bash |
+| [🪟 Disable-HyperV-EVE-NG](https://github.com/VigneshVijayK/Disable-HyperV-EVE-NG) | Automated PowerShell script to disable Hyper-V, VBS, Device Guard, and Memory Integrity for hypervisor compatibility | PowerShell |
+| [⚡ Beryllium Tools](https://github.com/VigneshVijayK/beryllium-tools) | Lightweight ROM flashing toolkit for POCO F1 — stable alternative to Mi Flash Tool | Batch / ADB |
+| [🔊 Infinix XL422 Audio Fix](https://github.com/VigneshVijayK/infinix-XL422-linux-audio-fix) | ALSA/codec audio driver fix for Infinix XL422 laptops running Linux | Bash |
+| [🐧 Fastboot Press-Any-Key Fix](https://github.com/VigneshVijayK/fastboot-press-any-key-fix-linux) | Fix for Linux fastboot 'Press any key' not registering user input during Android flashing | Bash / Udev |
+| [📦 HyperV Installer](https://github.com/VigneshVijayK/HyperV-Installer) | One-command PowerShell script to enable Hyper-V on Windows Home editions | PowerShell |
+| [🤖 AI Attendance](https://github.com/VigneshVijayK/AI-Attendance) | AI-powered face recognition attendance system with OpenCV and automated logging | Python |
+| [🔐 Security Research](https://github.com/VigneshVijayK/fake_encryption_and_bootloader_lock) | Android security research — bypassing encryption and bootloader lock via root | Shell |
 
 ---
 
@@ -85,14 +107,27 @@ I'm a **Network Security Engineer** and **IoT & Surveillance Systems Specialist*
 
 ---
 
-## 🎯 Currently Pursuing
+## 🎓 Education
 
-- 📕 **CCIE Security** — Cisco Certified Internetwork Expert (Security Track)
-  - VPN technologies — IPsec, SSL/TLS, DMVPN, FlexVPN
-  - Next-Generation Firewalls — Cisco FTD, ASA, Firepower
-  - Identity & Access — ISE, 802.1X, RADIUS/TACACS+
-  - Threat Defence — IDS/IPS, AMP, Stealthwatch
-  - Zero Trust Architecture and secure network design
+- **BSc Electronics** — Kannur University, Kerala (First Class)
+- **NCVT COPA** — Computer Operator & Programming Assistant (95% — Distinction)
+
+## 🏅 Certifications
+
+- **CCIE Security** — Pursuing (Networkers Home, Bengaluru)
+- **AI Tools & Productivity** — Be10X Certified
+- **EEH Certification** — Ethical Hacking & Red Team (Red Team Hackers Academy, Kozhikode)
+
+---
+
+## 🌐 Languages
+
+| Language | Proficiency |
+|----------|------------|
+| English | Professional Working Proficiency |
+| Malayalam | Native / Fluent |
+| Hindi | Limited Working Proficiency |
+| Tamil | Basic / Conversational |
 
 ---
 
