@@ -264,12 +264,14 @@
 
           <div class="payment-form-card glass">
             <h2>Payment Details</h2>
-            <p>Complete the secure form below. Your license key will be sent to your email after payment confirmation.</p>
-            <div id="paymentLoading" class="payment-loading">
-              <div class="spinner" aria-hidden="true"></div>
-              <span>Loading secure payment form...</span>
+            <p>Click the button below to complete your payment securely on SurveyHeart. Your license key will be sent to your email after payment confirmation.</p>
+            <a href="https://form.svhrt.com/6a4405913fd706abb302e43a" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1.1rem; font-size: 1.1rem;">
+              <i class="fas fa-external-link-alt" aria-hidden="true"></i> Pay Securely ₹99
+            </a>
+            <div class="secure-note" style="margin-top: 1rem; justify-content: center;">
+              <i class="fas fa-lock" aria-hidden="true"></i>
+              <span>You will be redirected to SurveyHeart's secure payment page.</span>
             </div>
-            <iframe id="paymentForm" src="https://form.svhrt.com/6a4405913fd706abb302e43a" title="Secure payment form" style="display: none;" onload="document.getElementById('paymentLoading').style.display='none'; this.style.display='block';"></iframe>
           </div>
         </div>
       </div>
