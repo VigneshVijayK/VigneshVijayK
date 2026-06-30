@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070a" />
+  <meta name="color-scheme" content="dark light" />
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme') || 'system';
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (saved === 'system' && systemDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <title>Secure Payment — Hyper-V Complete Disabler | Vignesh Vijay K</title>
+  <meta name="description" content="Secure payment page for Hyper-V Complete Disabler license. ₹99 one-time payment." />
+  <link rel="canonical" href="https://vigneshvijayk.github.io/VigneshVijayK/payment.html" />
+
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .payment-hero {
+      min-height: auto;
+      padding: 10rem 0 3rem;
+      text-align: center;
+    }
+    .payment-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 0.75rem;
+    }
+    .payment-hero p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .payment-content {
+      display: grid;
+      grid-template-columns: minmax(300px, 400px) 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .order-summary-card,
+    .payment-form-card {
+      padding: 2.25rem;
+    }
+
+    .order-summary-card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .order-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      background: rgba(0, 212, 255, 0.05);
+      border: 1px solid rgba(0, 212, 255, 0.1);
+      margin-bottom: 1.5rem;
+    }
+
+    .order-item-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      background: rgba(0, 212, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      color: var(--accent);
+    }
+
+    .order-item-info h3 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    .order-item-info p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .price-breakdown { margin-bottom: 1.5rem; }
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+    .price-row.total {
+      border-bottom: none;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .price-row.total .amount {
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+
+    .secure-note {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+    .secure-note i { color: var(--accent); }
+
+    .payment-form-card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .payment-form-card > p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .payment-form-card iframe {
+      width: 100%;
+      height: 650px;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      background: var(--bg-card);
+    }
+
+    .payment-loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 3rem;
+      color: var(--text-muted);
+    }
+
+    .spinner {
+      width: 1.5rem;
+      height: 1.5rem;
+      border: 2px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 900px) {
+      .payment-content { grid-template-columns: 1fr; }
+      .payment-form-card iframe { height: 700px; }
+    }
+
+    @media (max-width: 480px) {
+      .payment-hero { padding: 8rem 0 2rem; }
+      .order-summary-card,
+      .payment-form-card { padding: 1.5rem; }
+      .payment-form-card iframe { height: 750px; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="container nav-content">
+      <a href="index.html" class="logo">VVK<span class="gradient-text">.</span></a>
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="index.html#about" class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="index.html#skills" class="nav-link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="index.html#projects" class="nav-link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="index.html#contact" class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Change theme">
+          <i class="fas fa-sun" aria-hidden="true" data-icon="light"></i>
+          <i class="fas fa-moon" aria-hidden="true" data-icon="dark" style="display: none;"></i>
+          <i class="fas fa-desktop" aria-hidden="true" data-icon="system" style="display: none;"></i>
+          <span class="theme-label">Theme</span>
+        </button>
+        <a href="license.html" class="btn btn-secondary nav-cta">Back to License</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="index.html#about" class="mobile-link">About</a></li>
+      <li><a href="index.html#skills" class="mobile-link">Skills</a></li>
+      <li><a href="index.html#projects" class="mobile-link">Projects</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main id="main-content">
+    <section class="payment-hero">
+      <div class="container">
+        <span class="hero-tag reveal"><span class="badge-dot" aria-hidden="true"></span> SECURE CHECKOUT</span>
+        <h1 class="reveal">Complete Your <span class="gradient-text">Purchase</span></h1>
+        <p class="reveal">Review your order below and complete the secure payment form.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="payment-content reveal">
+          <div class="order-summary-card glass">
+            <h2><i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Summary</h2>
+            <div class="order-item">
+              <div class="order-item-icon"><i class="fas fa-key" aria-hidden="true"></i></div>
+              <div class="order-item-info">
+                <h3>Hyper-V Complete Disabler</h3>
+                <p>Lifetime license</p>
+              </div>
+            </div>
+            <div class="price-breakdown">
+              <div class="price-row">
+                <span>License Price</span>
+                <span>₹99</span>
+              </div>
+              <div class="price-row">
+                <span>Taxes</span>
+                <span>Included</span>
+              </div>
+              <div class="price-row total">
+                <span>Total</span>
+                <span class="amount">₹99</span>
+              </div>
+            </div>
+            <div class="secure-note">
+              <i class="fas fa-shield-alt" aria-hidden="true"></i>
+              <span>Your payment is processed securely via our payment partner.</span>
+            </div>
+          </div>
+
+          <div class="payment-form-card glass">
+            <h2>Payment Details</h2>
+            <p>Complete the secure form below. Your license key will be sent to your email after payment confirmation.</p>
+            <div id="paymentLoading" class="payment-loading">
+              <div class="spinner" aria-hidden="true"></div>
+              <span>Loading secure payment form...</span>
+            </div>
+            <iframe id="paymentForm" src="https://form.svhrt.com/6a4405913fd706abb302e43a" title="Secure payment form" style="display: none;" onload="document.getElementById('paymentLoading').style.display='none'; this.style.display='block';"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">VVK<span class="gradient-text">.</span></span>
+          <p>Network Security Engineer | IoT & Surveillance Specialist</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Portfolio</a>
+          <a href="license.html">License</a>
+          <a href="https://github.com/VigneshVijayK/Disable-HyperV-EVE-NG" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/VigneshVijayK" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/vignesh-vijay-k/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://wa.me/918590011604" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; <span id="paymentYear"></span> Vignesh Vijay K. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

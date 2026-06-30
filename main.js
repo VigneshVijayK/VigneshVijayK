@@ -447,3 +447,9 @@ const licenseYear = document.getElementById('licenseYear');
 if (licenseYear) {
   licenseYear.textContent = new Date().getFullYear();
 }
+
+// Payment page dynamic year
+const paymentYear = document.getElementById('paymentYear');
+if (paymentYear) {
+  paymentYear.textContent = new Date().getFullYear();
+}
