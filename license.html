@@ -3,254 +3,314 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>License — Hyper-V Disabler | Vignesh Vijay K</title>
-  <meta name="description" content="Purchase a license key for Hyper-V Complete Disabler script." />
+  <meta name="theme-color" content="#05070a" />
+  <meta name="color-scheme" content="dark light" />
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme') || 'system';
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (saved === 'system' && systemDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <title>License — Hyper-V Complete Disabler | Vignesh Vijay K</title>
+  <meta name="description" content="Purchase a license key for Hyper-V Complete Disabler for ₹99. One-time payment, lifetime access." />
+  <link rel="canonical" href="https://vigneshvijayk.github.io/VigneshVijayK/license.html" />
+
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    .license-section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6rem 1rem;
-    }
-    .license-card {
-      max-width: 520px;
-      width: 100%;
-      padding: 2.5rem;
+    .license-hero {
+      min-height: auto;
+      padding: 10rem 0 4rem;
       text-align: center;
     }
-    .license-card .icon {
-      font-size: 2.5rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
+    .license-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 0.75rem;
     }
-    .license-card h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-    }
-    .license-card .subtitle {
+    .license-hero p {
       color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
     }
-    .price {
-      font-size: 2.5rem;
-      font-weight: 700;
+
+    .license-content {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .license-info-card,
+    .repo-card,
+    .form-card {
+      padding: 2.25rem;
+    }
+
+    .license-info-card .price {
+      font-size: 3.5rem;
+      font-weight: 800;
       font-family: var(--font-h);
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 0.25rem;
+      line-height: 1;
+      margin-bottom: 0.5rem;
     }
-    .price-label {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-bottom: 2rem;
-    }
-    .features {
-      text-align: left;
-      margin-bottom: 2rem;
-    }
-    .features li {
-      list-style: none;
-      padding: 0.5rem 0;
+
+    .license-info-card .price-label {
       color: var(--text-muted);
       font-size: 0.9rem;
+      margin-bottom: 2rem;
     }
-    .features li i {
-      color: var(--accent);
-      width: 1.5rem;
-      margin-right: 0.5rem;
+
+    .license-features { list-style: none; margin-bottom: 2rem; }
+    .license-features li {
+      padding: 0.75rem 0;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-bottom: 1px solid var(--border);
     }
-    .btn-razorpay {
+    .license-features li:last-child { border-bottom: none; }
+    .license-features li i { color: var(--accent); width: 1.25rem; }
+
+    .repo-card { margin-top: 1.5rem; }
+    .repo-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .repo-header > i { font-size: 2rem; color: var(--text); margin-top: 0.25rem; }
+    .repo-title h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+    .repo-updated { color: var(--text-muted); font-size: 0.8rem; }
+    .repo-description { color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.6; }
+    .repo-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .repo-stats span { display: flex; align-items: center; gap: 0.35rem; }
+    .repo-stats i { color: var(--accent); }
+    .repo-link { width: 100%; justify-content: center; }
+
+    .form-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .form-card > p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .form-card iframe {
       width: 100%;
-      padding: 1rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      font-family: var(--font);
-      border: none;
-      border-radius: 0.75rem;
-      cursor: pointer;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #fff;
-      transition: var(--tr);
+      height: 620px;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      background: var(--bg-card);
     }
-    .btn-razorpay:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 30px var(--accent-glow);
-    }
-    .btn-razorpay:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none;
-    }
-    .btn-razorpay i {
-      margin-right: 0.5rem;
-    }
-    .already-have {
-      margin-top: 1.5rem;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-    .already-have a {
-      color: var(--accent);
-    }
-    .status-msg {
-      margin-top: 1rem;
-      padding: 0.75rem;
-      border-radius: 0.5rem;
-      font-size: 0.9rem;
-      display: none;
-    }
-    .status-msg.success {
-      display: block;
-      background: rgba(16, 185, 129, 0.15);
-      color: #10b981;
-      border: 1px solid rgba(16, 185, 129, 0.3);
-    }
-    .status-msg.error {
-      display: block;
-      background: rgba(239, 68, 68, 0.15);
-      color: #ef4444;
-      border: 1px solid rgba(239, 68, 68, 0.3);
-    }
-    .back-link {
-      display: inline-block;
-      margin-top: 1.5rem;
+
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
       color: var(--text-muted);
       font-size: 0.85rem;
     }
-    .back-link i {
-      margin-right: 0.3rem;
+    .trust-badges span { display: flex; align-items: center; gap: 0.5rem; }
+    .trust-badges i { color: var(--accent); }
+
+    .license-faq { padding: 4rem 0; }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
-    .back-link:hover {
-      color: var(--accent);
+    .faq-card { padding: 1.75rem; }
+    .faq-card h3 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--text); }
+    .faq-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+
+    @media (max-width: 900px) {
+      .license-content { grid-template-columns: 1fr; }
+      .form-card iframe { height: 680px; }
     }
-    .loading-spinner {
-      display: inline-block;
-      width: 1rem;
-      height: 1rem;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-top-color: #fff;
-      border-radius: 50%;
-      animation: spin 0.6s linear infinite;
-      margin-right: 0.5rem;
-      vertical-align: middle;
+    @media (max-width: 480px) {
+      .license-hero { padding: 8rem 0 3rem; }
+      .license-info-card,
+      .repo-card,
+      .form-card { padding: 1.5rem; }
+      .form-card iframe { height: 720px; }
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
   </style>
 </head>
 <body>
 
-  <canvas id="bg-canvas"></canvas>
-  <div class="bg-glow bg-glow-1"></div>
-  <div class="bg-glow bg-glow-2"></div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
 
-  <nav id="navbar">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav id="navbar" aria-label="Main navigation">
     <div class="container nav-content">
-      <a href="https://vigneshvijayk.github.io/VigneshVijayK/" class="logo">VVK<span class="gradient-text">.</span></a>
-      <ul class="nav-links">
-        <li><a href="https://vigneshvijayk.github.io/VigneshVijayK/#about">About</a></li>
-        <li><a href="https://vigneshvijayk.github.io/VigneshVijayK/#skills">Skills</a></li>
-        <li><a href="https://vigneshvijayk.github.io/VigneshVijayK/#projects">Projects</a></li>
-        <li><a href="https://vigneshvijayk.github.io/VigneshVijayK/#contact">Contact</a></li>
+      <a href="index.html" class="logo">VVK<span class="gradient-text">.</span></a>
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="index.html#about" class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="index.html#skills" class="nav-link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="index.html#projects" class="nav-link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="index.html#contact" class="nav-link" role="menuitem">Contact</a></li>
       </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Change theme">
+          <i class="fas fa-sun" aria-hidden="true" data-icon="light"></i>
+          <i class="fas fa-moon" aria-hidden="true" data-icon="dark" style="display: none;"></i>
+          <i class="fas fa-desktop" aria-hidden="true" data-icon="system" style="display: none;"></i>
+          <span class="theme-label">Theme</span>
+        </button>
+        <a href="index.html" class="btn btn-secondary nav-cta">Back to Portfolio</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <section class="license-section">
-    <div class="glass license-card">
-      <div class="icon"><i class="fas fa-key"></i></div>
-      <h1>Hyper-V Disabler License</h1>
-      <p class="subtitle">Get instant access to disable Hyper-V, VBS, Device Guard, and Memory Integrity on Windows 10/11.</p>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="index.html#about" class="mobile-link">About</a></li>
+      <li><a href="index.html#skills" class="mobile-link">Skills</a></li>
+      <li><a href="index.html#projects" class="mobile-link">Projects</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
 
-      <div class="price">₹99</div>
-      <div class="price-label">One-time payment — lifetime access</div>
+  <main id="main-content">
+    <section class="license-hero">
+      <div class="container">
+        <span class="hero-tag reveal"><span class="badge-dot" aria-hidden="true"></span> LICENSE</span>
+        <h1 class="reveal">Hyper-V Complete <span class="gradient-text">Disabler</span></h1>
+        <p class="reveal">Get instant access to the PowerShell script that disables Hyper-V, VBS, Device Guard, Credential Guard, and Memory Integrity on Windows 10 / 11.</p>
+      </div>
+    </section>
 
-      <ul class="features">
-        <li><i class="fas fa-check-circle"></i> Instant license key via email</li>
-        <li><i class="fas fa-check-circle"></i> Works on Windows 10 & 11 (including 24H2)</li>
-        <li><i class="fas fa-check-circle"></i> Lifetime validity — no renewals</li>
-        <li><i class="fas fa-check-circle"></i> Email support included</li>
-      </ul>
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="license-content reveal">
+          <div class="license-left">
+            <div class="glass license-info-card">
+              <div class="price">₹99</div>
+              <div class="price-label">One-time payment — lifetime access</div>
+              <ul class="license-features">
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Instant license key via email</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Works on Windows 10 & 11 (incl. 24H2)</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Disables Hyper-V, VBS, Device Guard & Memory Integrity</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Lifetime validity — no renewals</li>
+                <li><i class="fas fa-check-circle" aria-hidden="true"></i> Email support included</li>
+              </ul>
+              <a href="#purchase-form" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                <i class="fas fa-lock" aria-hidden="true"></i> Buy License Now
+              </a>
+              <div class="trust-badges">
+                <span><i class="fas fa-shield-alt" aria-hidden="true"></i> Secure</span>
+                <span><i class="fas fa-bolt" aria-hidden="true"></i> Instant</span>
+                <span><i class="fas fa-infinity" aria-hidden="true"></i> Lifetime</span>
+              </div>
+            </div>
 
-      <button class="btn-razorpay" id="buyBtn" onclick="startPayment()">
-        <i class="fas fa-lock"></i> Buy License — ₹99
-      </button>
+            <div id="repoDetails"></div>
+          </div>
 
-      <div id="statusMsg" class="status-msg"></div>
+          <div class="license-right">
+            <div class="glass form-card" id="purchase-form">
+              <h2>Purchase License</h2>
+              <p>Complete the form below. You will receive your license key after successful payment.</p>
+              <div id="licenseForm"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <p class="already-have">
-        <i class="fas fa-arrow-left"></i>
-        <a href="https://github.com/VigneshVijayK/Disable-HyperV-EVE-NG">Back to project</a>
-      </p>
+    <section class="section section-alt license-faq">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-tag">// faq</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-grid">
+          <div class="glass faq-card reveal">
+            <h3><i class="fas fa-key" aria-hidden="true"></i> How do I get my license key?</h3>
+            <p>After your payment is confirmed, the license key is sent to the email address you provide in the purchase form.</p>
+          </div>
+          <div class="glass faq-card reveal">
+            <h3><i class="fas fa-redo" aria-hidden="true"></i> Can I use this on multiple PCs?</h3>
+            <p>Each license key is valid for one machine. Contact support for bulk or multi-device licensing.</p>
+          </div>
+          <div class="glass faq-card reveal">
+            <h3><i class="fas fa-undo" aria-hidden="true"></i> What if it doesn't work?</h3>
+            <p>Reach out via email or WhatsApp with your order details. I provide troubleshooting support for all licensed users.</p>
+          </div>
+          <div class="glass faq-card reveal">
+            <h3><i class="fas fa-question-circle" aria-hidden="true"></i> Do I need to run it as admin?</h3>
+            <p>Yes. The script modifies system-level virtualization settings, so it must be run from an Administrator CMD/PowerShell prompt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">VVK<span class="gradient-text">.</span></span>
+          <p>Network Security Engineer | IoT & Surveillance Specialist</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Portfolio</a>
+          <a href="https://github.com/VigneshVijayK/Disable-HyperV-EVE-NG" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/VigneshVijayK" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/vignesh-vijay-k/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://wa.me/918590011604" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; <span id="licenseYear"></span> Vignesh Vijay K. All rights reserved.</p>
+      </div>
     </div>
-  </section>
-
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  <script>
-    const API_BASE = 'https://disable-hyperv-license-api.onrender.com';
-
-    function showStatus(msg, type) {
-      const el = document.getElementById('statusMsg');
-      el.textContent = msg;
-      el.className = 'status-msg ' + type;
-    }
-
-    async function startPayment() {
-      const btn = document.getElementById('buyBtn');
-      btn.disabled = true;
-      btn.innerHTML = '<span class="loading-spinner"></span> Creating order...';
-      showStatus('', '');
-
-      try {
-        const res = await fetch(API_BASE + '/create-order', { method: 'POST' });
-        const data = await res.json();
-
-        if (!data.order_id) {
-          throw new Error(data.error || 'Failed to create order');
-        }
-
-        const options = {
-          key: data.key_id,
-          order_id: data.order_id,
-          name: 'Hyper-V Disabler',
-          description: 'License Key',
-          prefill: { contact: '', email: '' },
-          theme: { color: '#00d4ff' },
-          handler: function(response) {
-            showStatus('Payment successful! Your license key is being sent to your email.', 'success');
-            btn.innerHTML = '<i class="fas fa-check"></i> License Purchased';
-            btn.disabled = true;
-          },
-          modal: {
-            ondismiss: function() {
-              btn.innerHTML = '<i class="fas fa-lock"></i> Buy License — ₹99';
-              btn.disabled = false;
-            }
-          }
-        };
-
-        const rzp = new Razorpay(options);
-        rzp.on('payment.failed', function(resp) {
-          showStatus('Payment failed: ' + (resp.error.description || 'Please try again'), 'error');
-          btn.innerHTML = '<i class="fas fa-lock"></i> Buy License — ₹99';
-          btn.disabled = false;
-        });
-
-        rzp.open();
-      } catch (err) {
-        showStatus('Error: ' + err.message, 'error');
-        btn.innerHTML = '<i class="fas fa-lock"></i> Buy License — ₹99';
-        btn.disabled = false;
-      }
-    }
-  </script>
+  </footer>
 
   <script src="main.js"></script>
 </body>

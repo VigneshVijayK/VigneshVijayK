@@ -4,36 +4,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05070a" />
+  <meta name="color-scheme" content="dark light" />
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme') || 'system';
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (saved === 'system' && systemDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
   <meta name="google-site-verification" content="BcRV6kWdGXgRCRf1ovlCBE_jr2HHilK5G1GdM3CwSa8" />
+
+  <!-- SEO / Social -->
   <title>Vignesh Vijay K | Network Security Engineer</title>
   <meta name="description"
     content="Portfolio of Vignesh Vijay K — Network Security Engineer, IoT & Surveillance Systems Specialist, AI & Automation Enthusiast." />
+  <meta name="author" content="Vignesh Vijay K" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="Network Security Engineer, IT Infrastructure, Surveillance, IoT, AI Automation, Cisco, Hikvision, PowerShell, Linux" />
 
-  <!-- Font Awesome -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vignesh Vijay K",
+    "url": "https://vigneshvijayk.github.io/",
+    "image": "https://vigneshvijayk.github.io/images/profile.jpg",
+    "sameAs": [
+      "https://github.com/VigneshVijayK",
+      "https://www.linkedin.com/in/vignesh-vijay-k/"
+    ],
+    "jobTitle": "Network Security Engineer",
+    "description": "Network Security and IT Infrastructure professional with 2+ years experience in networking, surveillance, IoT, and AI automation."
+  }
+  </script>
+  <meta property="og:title" content="Vignesh Vijay K | Network Security Engineer" />
+  <meta property="og:description"
+    content="Network Security, IT Infrastructure, Surveillance & IoT Specialist. 2+ years of hands-on experience." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vigneshvijayk.github.io/" />
+  <meta property="og:image" content="https://vigneshvijayk.github.io/images/profile.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vignesh Vijay K | Network Security Engineer" />
+  <meta name="twitter:description"
+    content="Network Security, IT Infrastructure, Surveillance & IoT Specialist. 2+ years of hands-on experience." />
+  <meta name="twitter:image" content="https://vigneshvijayk.github.io/images/profile.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- BG Elements -->
-  <canvas id="bg-canvas"></canvas>
-  <div class="bg-glow bg-glow-1"></div>
-  <div class="bg-glow bg-glow-2"></div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
 
   <!-- Navigation -->
-  <nav id="navbar">
+  <nav id="navbar" aria-label="Main navigation">
     <div class="container nav-content">
       <a href="#" class="logo">VVK<span class="gradient-text">.</span></a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="#credentials" class="nav-link" role="menuitem">Credentials</a></li>
+        <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="#contact" class="btn btn-primary nav-cta" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Hire Me</a>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Change theme">
+          <i class="fas fa-sun" aria-hidden="true" data-icon="light"></i>
+          <i class="fas fa-moon" aria-hidden="true" data-icon="dark" style="display: none;"></i>
+          <i class="fas fa-desktop" aria-hidden="true" data-icon="system" style="display: none;"></i>
+          <span class="theme-label">Theme</span>
+        </button>
+        <a href="license.html" class="btn btn-secondary nav-cta license-cta">
+          <i class="fas fa-key" aria-hidden="true"></i> Buy License
+        </a>
+        <a href="#contact" class="btn btn-primary nav-cta">Hire Me</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
+          aria-controls="mobileMenu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -41,347 +113,496 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <ul>
       <li><a href="#about" class="mobile-link">About</a></li>
       <li><a href="#skills" class="mobile-link">Skills</a></li>
       <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#credentials" class="mobile-link">Credentials</a></li>
       <li><a href="#contact" class="mobile-link">Contact</a></li>
     </ul>
   </div>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-content">
-      <span class="hero-tag reveal">NETWORK SECURITY ENGINEER</span>
-      <h1 class="reveal"><span class="gradient-text">Securing</span> Networks, Automating Intelligence.</h1>
-      <p class="reveal">I am <strong>Vignesh Vijay K</strong>, a Network Security and IT Infrastructure professional with 
-        2+ years of hands-on experience in network administration, surveillance systems, IoT solutions, AI-powered 
-        automation, and technical support. Skilled in Cisco, NETGEAR, D-Link, TP-Link, and Hikvision platforms.</p>
-      <div class="hero-btns reveal">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="https://www.linkedin.com/in/vignesh-vijay-k/" target="_blank" class="btn btn-secondary">LinkedIn</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// personal_summary</span>
-        <h2 class="section-title">Professional Profile</h2>
-      </div>
-      <div class="glass about-text-box reveal">
-        <p>
-          Network Security and IT Infrastructure professional with 2+ years of hands-on experience in network 
-          administration, surveillance systems, IoT solutions, AI-powered automation, and technical support. 
-          Skilled in configuring, deploying, and troubleshooting multi-vendor networking equipment (Cisco, 
-          NETGEAR, D-Link, TP-Link), as well as Hikvision NVR/DVR/HVR security systems.
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-bg-grid" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <span class="hero-tag reveal">
+          <span class="badge-dot" aria-hidden="true"></span>
+          NETWORK SECURITY ENGINEER
+        </span>
+        <h1 class="reveal"><span class="gradient-text">Securing</span> Networks, Automating Intelligence.</h1>
+        <p class="hero-typing reveal" aria-hidden="true">
+          <span id="type-text"></span><span class="cursor">|</span>
         </p>
-        <p>
-          Demonstrated expertise in leveraging AI tools for smart surveillance, automation workflows, and 
-          productivity enhancement. Proficient in Linux system administration, Android kernel customization, 
-          and full-stack web development. Maintains a proven 90% first-contact resolution rate.
+        <p class="hero-sub reveal">
+          I am <strong>Vignesh Vijay K</strong>, a Network Security and IT Infrastructure professional with 2+ years of
+          hands-on experience in network administration, surveillance systems, IoT solutions, AI-powered automation, and
+          technical support. Skilled in Cisco, NETGEAR, D-Link, TP-Link, and Hikvision platforms.
         </p>
-        <p>
-          Currently advancing toward <strong>CCIE Security</strong>, with a career focus on Network Security, 
-          AI-driven infrastructure, and intelligent automation systems.
-        </p>
+        <div class="hero-btns reveal">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="license.html" class="btn btn-secondary license-cta">
+            <i class="fas fa-key" aria-hidden="true"></i> Buy License
+          </a>
+          <a href="https://www.linkedin.com/in/vignesh-vijay-k/" target="_blank" rel="noopener noreferrer"
+            class="btn btn-secondary">
+            <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+        </div>
+        <div class="hero-stats reveal">
+          <div class="hero-stat">
+            <div class="stat-num">2+</div>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <div class="stat-num">10+</div>
+            <span class="stat-label">Open Source Projects</span>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <div class="stat-num">90%</div>
+            <span class="stat-label">First-Contact Resolution</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-dot"></div>
+        <div class="scroll-dot"></div>
+        <div class="scroll-dot"></div>
+      </div>
+    </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// technical_arsenal</span>
-        <h2 class="section-title">Skills & Expertise</h2>
-      </div>
-      <div class="skills-grid">
-        <div class="glass skill-category reveal">
-          <h3><i class="fas fa-network-wired"></i> Networking</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Routing & Switching</span>
-            <span class="skill-tag">TCP/IP</span>
-            <span class="skill-tag">VLAN</span>
-            <span class="skill-tag">OSPF</span>
-            <span class="skill-tag">EIGRP</span>
-            <span class="skill-tag">BGP</span>
-            <span class="skill-tag">HSRP/VRRP</span>
-            <span class="skill-tag">ACL</span>
-            <span class="skill-tag">NAT/PAT</span>
-            <span class="skill-tag">VPN</span>
-            <span class="skill-tag">DHCP</span>
-            <span class="skill-tag">DNS</span>
-          </div>
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// personal_summary</span>
+          <h2 class="section-title">Professional Profile</h2>
+          <p class="section-sub">A quick look at my background, expertise, and career focus.</p>
         </div>
-        <div class="glass skill-category reveal">
-          <h3><i class="fas fa-shield-alt"></i> Network Security</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Firewall (ASA)</span>
-            <span class="skill-tag">FortiGate</span>
-            <span class="skill-tag">Cisco CWS/ESA/WSA</span>
-            <span class="skill-tag">VPN Configuration</span>
-            <span class="skill-tag">IDS/IPS</span>
-            <span class="skill-tag">Network Hardening</span>
+        <div class="about-grid">
+          <div class="glass about-text-box reveal">
+            <p>
+              Network Security and IT Infrastructure professional with 2+ years of hands-on experience in network
+              administration, surveillance systems, IoT solutions, AI-powered automation, and technical support. Skilled
+              in configuring, deploying, and troubleshooting multi-vendor networking equipment (Cisco, NETGEAR, D-Link,
+              TP-Link), as well as Hikvision NVR/DVR/HVR security systems.
+            </p>
+            <p>
+              Demonstrated expertise in leveraging AI tools for smart surveillance, automation workflows, and
+              productivity enhancement. Proficient in Linux system administration, Android kernel customization, and
+              full-stack web development. Maintains a proven 90% first-contact resolution rate.
+            </p>
+            <p>
+              Currently advancing toward <strong>CCIE Security</strong>, with a career focus on Network Security,
+              AI-driven infrastructure, and intelligent automation systems.
+            </p>
           </div>
-        </div>
-        <div class="glass skill-category reveal">
-          <h3><i class="fas fa-video"></i> Surveillance & IoT</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">CCTV System Design</span>
-            <span class="skill-tag">NVR/DVR/HVR</span>
-            <span class="skill-tag">Hikvision</span>
-            <span class="skill-tag">AI Surveillance</span>
-            <span class="skill-tag">Raspberry Pi</span>
-            <span class="skill-tag">ESP32</span>
-            <span class="skill-tag">Smart Home Automation</span>
-            <span class="skill-tag">Firmware Handling</span>
-          </div>
-        </div>
-        <div class="glass skill-category reveal">
-          <h3><i class="fas fa-desktop"></i> Operating Systems</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Linux (RHEL/CentOS/Fedora/Ubuntu/Debian)</span>
-            <span class="skill-tag">KVM/QEMU</span>
-            <span class="skill-tag">Windows Server</span>
-            <span class="skill-tag">Android (SELinux/Kernel/GSI)</span>
-            <span class="skill-tag">Magisk / KernelSU</span>
-            <span class="skill-tag">TWRP / ADB / Fastboot</span>
-          </div>
-        </div>
-        <div class="glass skill-category reveal">
-          <h3><i class="fas fa-code"></i> Programming & Scripting</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Bash/Shell</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">Kotlin</span>
-            <span class="skill-tag">Flutter</span>
-            <span class="skill-tag">PowerShell</span>
-            <span class="skill-tag">Groovy</span>
-          </div>
-        </div>
-        <div class="glass skill-category reveal">
-          <h3><i class="fas fa-robot"></i> AI & Automation</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">AI Network Automation</span>
-            <span class="skill-tag">Python + Ansible</span>
-            <span class="skill-tag">Next.js</span>
-            <span class="skill-tag">Supabase</span>
-            <span class="skill-tag">Ollama</span>
-            <span class="skill-tag">OpenLLM</span>
-            <span class="skill-tag">Android AI (Kotlin)</span>
+          <div class="about-cards">
+            <div class="glass about-card reveal">
+              <div class="about-card-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+              <h3>Network Security</h3>
+              <p>Firewalls, VPNs, ACLs, IDS/IPS, and network hardening.</p>
+            </div>
+            <div class="glass about-card reveal">
+              <div class="about-card-icon"><i class="fas fa-video" aria-hidden="true"></i></div>
+              <h3>Surveillance & IoT</h3>
+              <p>CCTV design, Hikvision systems, Raspberry Pi & ESP32.</p>
+            </div>
+            <div class="glass about-card reveal">
+              <div class="about-card-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
+              <h3>AI & Automation</h3>
+              <p>Python, Ansible, Ollama, and smart workflow automation.</p>
+            </div>
+            <div class="glass about-card reveal">
+              <div class="about-card-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+              <h3>Development</h3>
+              <p>Linux, Android, Kotlin, Flutter, and full-stack web.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// technical_arsenal</span>
+          <h2 class="section-title">Skills & Expertise</h2>
+          <p class="section-sub">Technologies and tools I use to build, secure, and automate systems.</p>
+        </div>
+        <div class="skills-grid stagger-children">
+          <div class="glass skill-category reveal" data-delay="0">
+            <div class="skill-cat-header">
+              <i class="fas fa-network-wired" aria-hidden="true"></i>
+              <h3>Networking</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Routing & Switching</span>
+              <span class="skill-tag">TCP/IP</span>
+              <span class="skill-tag">VLAN</span>
+              <span class="skill-tag">OSPF</span>
+              <span class="skill-tag">EIGRP</span>
+              <span class="skill-tag">BGP</span>
+              <span class="skill-tag">HSRP/VRRP</span>
+              <span class="skill-tag">ACL</span>
+              <span class="skill-tag">NAT/PAT</span>
+              <span class="skill-tag">VPN</span>
+              <span class="skill-tag">DHCP</span>
+              <span class="skill-tag">DNS</span>
+            </div>
+          </div>
+          <div class="glass skill-category reveal">
+            <div class="skill-cat-header">
+              <i class="fas fa-shield-alt" aria-hidden="true"></i>
+              <h3>Network Security</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Firewall (ASA)</span>
+              <span class="skill-tag">FortiGate</span>
+              <span class="skill-tag">Cisco CWS/ESA/WSA</span>
+              <span class="skill-tag">VPN Configuration</span>
+              <span class="skill-tag">IDS/IPS</span>
+              <span class="skill-tag">Network Hardening</span>
+            </div>
+          </div>
+          <div class="glass skill-category reveal">
+            <div class="skill-cat-header">
+              <i class="fas fa-video" aria-hidden="true"></i>
+              <h3>Surveillance & IoT</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">CCTV System Design</span>
+              <span class="skill-tag">NVR/DVR/HVR</span>
+              <span class="skill-tag">Hikvision</span>
+              <span class="skill-tag">AI Surveillance</span>
+              <span class="skill-tag">Raspberry Pi</span>
+              <span class="skill-tag">ESP32</span>
+              <span class="skill-tag">Smart Home Automation</span>
+              <span class="skill-tag">Firmware Handling</span>
+            </div>
+          </div>
+          <div class="glass skill-category reveal">
+            <div class="skill-cat-header">
+              <i class="fas fa-desktop" aria-hidden="true"></i>
+              <h3>Operating Systems</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Linux (RHEL/CentOS/Fedora/Ubuntu/Debian)</span>
+              <span class="skill-tag">KVM/QEMU</span>
+              <span class="skill-tag">Windows Server</span>
+              <span class="skill-tag">Android (SELinux/Kernel/GSI)</span>
+              <span class="skill-tag">Magisk / KernelSU</span>
+              <span class="skill-tag">TWRP / ADB / Fastboot</span>
+            </div>
+          </div>
+          <div class="glass skill-category reveal">
+            <div class="skill-cat-header">
+              <i class="fas fa-code" aria-hidden="true"></i>
+              <h3>Programming & Scripting</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Bash/Shell</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Kotlin</span>
+              <span class="skill-tag">Flutter</span>
+              <span class="skill-tag">PowerShell</span>
+              <span class="skill-tag">Groovy</span>
+            </div>
+          </div>
+          <div class="glass skill-category reveal">
+            <div class="skill-cat-header">
+              <i class="fas fa-robot" aria-hidden="true"></i>
+              <h3>AI & Automation</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">AI Network Automation</span>
+              <span class="skill-tag">Python + Ansible</span>
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">Supabase</span>
+              <span class="skill-tag">Ollama</span>
+              <span class="skill-tag">OpenLLM</span>
+              <span class="skill-tag">Android AI (Kotlin)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// projects_contributions</span>
-        <h2 class="section-title">Projects & Open-Source</h2>
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// projects_contributions</span>
+          <h2 class="section-title">Projects & Open-Source</h2>
+          <p class="section-sub">A selection of tools and experiments I have built or contributed to.</p>
+        </div>
+        <div class="projects-grid stagger-children">
+          <a href="https://github.com/VigneshVijayK/BillMe-Kotlin" target="_blank" rel="noopener noreferrer"
+            class="glass project-card reveal" data-delay="0">
+            <div class="project-top-row">
+              <div class="project-icon">🧾</div>
+              <span class="project-lang lang-py">Kotlin</span>
+            </div>
+            <h3>BillMe</h3>
+            <p>Native Android billing and invoice management app with CRUD functionality, Material Design UI, and
+              full-stack web version at bill-me-tau.vercel.app.</p>
+            <div class="project-footer">
+              <span class="project-meta"><i class="fab fa-github" aria-hidden="true"></i> Open Source</span>
+              <span class="project-link">View Repo <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+          <a href="https://www.anydownload.site/" target="_blank" rel="noopener noreferrer"
+            class="glass project-card reveal">
+            <div class="project-top-row">
+              <div class="project-icon">⬇️</div>
+              <span class="project-lang lang-py">Python</span>
+            </div>
+            <h3>AnyDownload</h3>
+            <p>Multi-platform media downloading tool supporting content from popular streaming and social media platforms
+              with a clean web interface.</p>
+            <div class="project-footer">
+              <span class="project-meta"><i class="fas fa-globe" aria-hidden="true"></i> Live Site</span>
+              <span class="project-link">Visit Site <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+          <a href="https://github.com/VigneshVijayK/debian-kvm-gui-setup" target="_blank" rel="noopener noreferrer"
+            class="glass project-card reveal">
+            <div class="project-top-row">
+              <div class="project-icon">🖥️</div>
+              <span class="project-lang lang-sh">Bash</span>
+            </div>
+            <h3>Debian KVM GUI Setup</h3>
+            <p>Fully automated Bash script that installs KVM/QEMU with virt-manager on any Debian-based distro in 11
+              automated steps.</p>
+            <div class="project-footer">
+              <span class="project-meta"><i class="fab fa-github" aria-hidden="true"></i> Open Source</span>
+              <span class="project-link">View Repo <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+          <a href="https://github.com/VigneshVijayK/Disable-HyperV-EVE-NG" target="_blank" rel="noopener noreferrer"
+            class="glass project-card reveal">
+            <div class="project-top-row">
+              <div class="project-icon">🪟</div>
+              <span class="project-lang lang-ps">PowerShell</span>
+            </div>
+            <h3>Disable-HyperV-EVE-NG</h3>
+            <p>Automated PowerShell script to disable Hyper-V, VBS, Device Guard, and Memory Integrity for bare-metal
+              hypervisor compatibility.</p>
+            <div class="project-footer">
+              <span class="project-meta"><i class="fab fa-github" aria-hidden="true"></i> Open Source</span>
+              <span class="project-link">View Repo <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+          <a href="https://github.com/VigneshVijayK/beryllium-tools" target="_blank" rel="noopener noreferrer"
+            class="glass project-card reveal">
+            <div class="project-top-row">
+              <div class="project-icon">⚡</div>
+              <span class="project-lang lang-bat">Batch</span>
+            </div>
+            <h3>Beryllium Tools</h3>
+            <p>Lightweight ROM flashing toolkit for POCO F1 (Beryllium) — a stable alternative to Mi Flash Tool using
+              ADB/Fastboot automation.</p>
+            <div class="project-footer">
+              <span class="project-meta"><i class="fab fa-github" aria-hidden="true"></i> Open Source</span>
+              <span class="project-link">View Repo <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+          <a href="https://github.com/VigneshVijayK/infinix-XL422-linux-audio-fix" target="_blank"
+            rel="noopener noreferrer" class="glass project-card reveal">
+            <div class="project-top-row">
+              <div class="project-icon">🔊</div>
+              <span class="project-lang lang-sh">Bash</span>
+            </div>
+            <h3>Infinix XL422 Audio Fix</h3>
+            <p>Diagnosed and resolved ALSA/codec audio driver mapping issues on Infinix XL422 laptops running Linux.</p>
+            <div class="project-footer">
+              <span class="project-meta"><i class="fab fa-github" aria-hidden="true"></i> Open Source</span>
+              <span class="project-link">View Repo <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+          <a href="https://github.com/VigneshVijayK/fastboot-press-any-key-fix-linux" target="_blank"
+            rel="noopener noreferrer" class="glass project-card reveal">
+            <div class="project-top-row">
+              <div class="project-icon">🐧</div>
+              <span class="project-lang lang-sh">Bash</span>
+            </div>
+            <h3>Fastboot Press-Any-Key Fix</h3>
+            <p>Resolved Linux-specific fastboot prompt issue where 'Press any key' would not register user input during
+              Android flashing.</p>
+            <div class="project-footer">
+              <span class="project-meta"><i class="fab fa-github" aria-hidden="true"></i> Open Source</span>
+              <span class="project-link">View Repo <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+          <a href="https://github.com/VigneshVijayK/HyperV-Installer" target="_blank" rel="noopener noreferrer"
+            class="glass project-card reveal">
+            <div class="project-top-row">
+              <div class="project-icon">📦</div>
+              <span class="project-lang lang-ps">PowerShell</span>
+            </div>
+            <h3>HyperV Installer</h3>
+            <p>One-command PowerShell script to enable Hyper-V on Windows Home editions without manual setup steps.</p>
+            <div class="project-footer">
+              <span class="project-meta"><i class="fab fa-github" aria-hidden="true"></i> Open Source</span>
+              <span class="project-link">View Repo <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+          <a href="https://github.com/VigneshVijayK/AI-Attendance" target="_blank" rel="noopener noreferrer"
+            class="glass project-card reveal">
+            <div class="project-top-row">
+              <div class="project-icon">🤖</div>
+              <span class="project-lang lang-py">Python</span>
+            </div>
+            <h3>AI Attendance</h3>
+            <p>AI-powered attendance tracking system using face recognition with OpenCV and automated logging.</p>
+            <div class="project-footer">
+              <span class="project-meta"><i class="fab fa-github" aria-hidden="true"></i> Open Source</span>
+              <span class="project-link">View Repo <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+          <a href="https://github.com/VigneshVijayK/fake_encryption_and_bootloader_lock" target="_blank"
+            rel="noopener noreferrer" class="glass project-card reveal">
+            <div class="project-top-row">
+              <div class="project-icon">🔐</div>
+              <span class="project-lang lang-sh">Shell</span>
+            </div>
+            <h3>Security Research</h3>
+            <p>Research project exploring Android security — bypassing encryption and bootloader lock via root access.</p>
+            <div class="project-footer">
+              <span class="project-meta"><i class="fab fa-github" aria-hidden="true"></i> Open Source</span>
+              <span class="project-link">View Repo <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </div>
+          </a>
+        </div>
       </div>
-      <div class="projects-grid">
-        <a href="https://github.com/VigneshVijayK/BillMe-Kotlin" target="_blank" class="glass project-card reveal">
-          <div class="project-icon">🧾</div>
-          <h3>BillMe</h3>
-          <p>Native Android billing and invoice management app with CRUD functionality, Material Design UI, and full-stack web version at bill-me-tau.vercel.app.</p>
-          <div class="project-footer">
-            <span class="project-lang">Kotlin / Android</span>
-            <span class="project-link">View Repo →</span>
-          </div>
-        </a>
-        <a href="https://www.anydownload.site/" target="_blank" class="glass project-card reveal">
-          <div class="project-icon">⬇️</div>
-          <h3>AnyDownload</h3>
-          <p>Multi-platform media downloading tool supporting content from popular streaming and social media platforms with a clean web interface.</p>
-          <div class="project-footer">
-            <span class="project-lang">Python / Web</span>
-            <span class="project-link">Visit Site →</span>
-          </div>
-        </a>
-        <a href="https://github.com/VigneshVijayK/debian-kvm-gui-setup" target="_blank" class="glass project-card reveal">
-          <div class="project-icon">🖥️</div>
-          <h3>Debian KVM GUI Setup</h3>
-          <p>Fully automated Bash script that installs KVM/QEMU with virt-manager on any Debian-based distro in 11 automated steps.</p>
-          <div class="project-footer">
-            <span class="project-lang">Bash</span>
-            <span class="project-link">View Repo →</span>
-          </div>
-        </a>
-        <a href="https://github.com/VigneshVijayK/Disable-HyperV-EVE-NG" target="_blank" class="glass project-card reveal">
-          <div class="project-icon">🪟</div>
-          <h3>Disable-HyperV-EVE-NG</h3>
-          <p>Automated PowerShell script to disable Hyper-V, VBS, Device Guard, and Memory Integrity for bare-metal hypervisor compatibility.</p>
-          <div class="project-footer">
-            <span class="project-lang">PowerShell</span>
-            <span class="project-link">View Repo →</span>
-          </div>
-        </a>
-        <a href="https://github.com/VigneshVijayK/beryllium-tools" target="_blank" class="glass project-card reveal">
-          <div class="project-icon">⚡</div>
-          <h3>Beryllium Tools</h3>
-          <p>Lightweight ROM flashing toolkit for POCO F1 (Beryllium) — a stable alternative to Mi Flash Tool using ADB/Fastboot automation.</p>
-          <div class="project-footer">
-            <span class="project-lang">Batch / ADB</span>
-            <span class="project-link">View Repo →</span>
-          </div>
-        </a>
-        <a href="https://github.com/VigneshVijayK/infinix-XL422-linux-audio-fix" target="_blank" class="glass project-card reveal">
-          <div class="project-icon">🔊</div>
-          <h3>Infinix XL422 Audio Fix</h3>
-          <p>Diagnosed and resolved ALSA/codec audio driver mapping issues on Infinix XL422 laptops running Linux.</p>
-          <div class="project-footer">
-            <span class="project-lang">Bash</span>
-            <span class="project-link">View Repo →</span>
-          </div>
-        </a>
-        <a href="https://github.com/VigneshVijayK/fastboot-press-any-key-fix-linux" target="_blank" class="glass project-card reveal">
-          <div class="project-icon">🐧</div>
-          <h3>Fastboot Press-Any-Key Fix</h3>
-          <p>Resolved Linux-specific fastboot prompt issue where 'Press any key' would not register user input during Android flashing.</p>
-          <div class="project-footer">
-            <span class="project-lang">Bash / Udev</span>
-            <span class="project-link">View Repo →</span>
-          </div>
-        </a>
-        <a href="https://github.com/VigneshVijayK/HyperV-Installer" target="_blank" class="glass project-card reveal">
-          <div class="project-icon">📦</div>
-          <h3>HyperV Installer</h3>
-          <p>One-command PowerShell script to enable Hyper-V on Windows Home editions without manual setup steps.</p>
-          <div class="project-footer">
-            <span class="project-lang">PowerShell</span>
-            <span class="project-link">View Repo →</span>
-          </div>
-        </a>
-        <a href="https://github.com/VigneshVijayK/AI-Attendance" target="_blank" class="glass project-card reveal">
-          <div class="project-icon">🤖</div>
-          <h3>AI Attendance</h3>
-          <p>AI-powered attendance tracking system using face recognition with OpenCV and automated logging.</p>
-          <div class="project-footer">
-            <span class="project-lang">Python</span>
-            <span class="project-link">View Repo →</span>
-          </div>
-        </a>
-        <a href="https://github.com/VigneshVijayK/fake_encryption_and_bootloader_lock" target="_blank" class="glass project-card reveal">
-          <div class="project-icon">🔐</div>
-          <h3>Security Research</h3>
-          <p>Research project exploring Android security — bypassing encryption and bootloader lock via root access.</p>
-          <div class="project-footer">
-            <span class="project-lang">Shell</span>
-            <span class="project-link">View Repo →</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Education & Certs -->
-  <section id="credentials" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag">// certifications</span>
-        <h2 class="section-title">Professional Credentials</h2>
+    <!-- Education & Certs -->
+    <section id="credentials" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// certifications</span>
+          <h2 class="section-title">Professional Credentials</h2>
+          <p class="section-sub">Education, certifications, and ongoing training.</p>
+        </div>
+        <div class="certs-grid stagger-children">
+          <div class="glass cert-card reveal cert-pursuing" data-delay="0">
+            <span class="cert-icon">📕</span>
+            <div class="cert-body">
+              <h4>CCIE Security</h4>
+              <p class="cert-issuer">Pursuing</p>
+              <p class="cert-detail">Networkers Home, Bengaluru</p>
+            </div>
+            <span class="pursuing-badge">In Progress</span>
+          </div>
+          <div class="glass cert-card reveal">
+            <span class="cert-icon">🤖</span>
+            <div class="cert-body">
+              <h4>AI Tools & Productivity</h4>
+              <p class="cert-issuer">Be10X Certified</p>
+            </div>
+          </div>
+          <div class="glass cert-card reveal">
+            <span class="cert-icon">🛡️</span>
+            <div class="cert-body">
+              <h4>EEH Certification</h4>
+              <p class="cert-issuer">Ethical Hacking & Red Team</p>
+              <p class="cert-detail">Red Team Hackers Academy, Kozhikode</p>
+            </div>
+          </div>
+          <div class="glass cert-card reveal">
+            <span class="cert-icon">🎓</span>
+            <div class="cert-body">
+              <h4>BSc Electronics</h4>
+              <p class="cert-issuer">First Class</p>
+              <p class="cert-detail">Kannur University</p>
+            </div>
+          </div>
+          <div class="glass cert-card reveal">
+            <span class="cert-icon">🏆</span>
+            <div class="cert-body">
+              <h4>NCVT COPA</h4>
+              <p class="cert-issuer">95% — Distinction</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="certs-grid">
-        <div class="glass cert-card reveal">
-          <span class="cert-icon">📕</span>
-          <h4>CCIE Security</h4>
-          <p>Pursuing — Networkers Home, Bengaluru</p>
-        </div>
-        <div class="glass cert-card reveal">
-          <span class="cert-icon">🤖</span>
-          <h4>AI Tools & Productivity</h4>
-          <p>Be10X Certified</p>
-        </div>
-        <div class="glass cert-card reveal">
-          <span class="cert-icon">🛡️</span>
-          <h4>EEH Certification</h4>
-          <p>Ethical Hacking & Red Team — Red Team Hackers Academy, Kozhikode</p>
-        </div>
-        <div class="glass cert-card reveal">
-          <span class="cert-icon">🎓</span>
-          <h4>BSc Electronics</h4>
-          <p>Kannur University — First Class</p>
-        </div>
-        <div class="glass cert-card reveal">
-          <span class="cert-icon">🏆</span>
-          <h4>NCVT COPA</h4>
-          <p>95% — Distinction</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Stats Section 
-  <section class="section">
-    <div class="container stats-container">
-      <div class="section-header reveal" style="text-align: center;">
-        <span class="section-tag">// activity_metrics</span>
-        <h2 class="section-title">GitHub Activity</h2>
-      </div>
-      <div class="stats-row reveal">
-        <div class="glass stats-card">
-          <img
-            src="https://github-readme-stats.vercel.app/api?username=VigneshVijayK&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&bg_color=00000000"
-            alt="GitHub Stats" />
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-tag">// get_in_touch</span>
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-sub">Available for networking consultations, surveillance systems, and security projects.</p>
         </div>
-        <div class="glass stats-card">
-          <img
-            src="https://github-readme-stats.vercel.app/api/top-langs/?username=VigneshVijayK&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000"
-            alt="Top Languages" />
+        <div class="contact-grid reveal">
+          <a href="https://wa.me/918590011604" target="_blank" rel="noopener noreferrer" class="glass contact-card">
+            <div class="contact-icon-wrap whatsapp"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+            <h3>WhatsApp</h3>
+            <p>Chat with me</p>
+          </a>
+          <a href="mailto:vigneshvijaykofficial@gmail.com" class="glass contact-card">
+            <div class="contact-icon-wrap email"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+            <h3>Email</h3>
+            <p>Get in touch</p>
+          </a>
+          <a href="https://github.com/VigneshVijayK" target="_blank" rel="noopener noreferrer"
+            class="glass contact-card">
+            <div class="contact-icon-wrap github"><i class="fab fa-github" aria-hidden="true"></i></div>
+            <h3>GitHub</h3>
+            <p>Check my repos</p>
+          </a>
+          <a href="https://www.linkedin.com/in/vignesh-vijay-k/" target="_blank" rel="noopener noreferrer"
+            class="glass contact-card">
+            <div class="contact-icon-wrap linkedin"><i class="fab fa-linkedin" aria-hidden="true"></i></div>
+            <h3>LinkedIn</h3>
+            <p>Let's network</p>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
-  -->
+    </section>
+  </main>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="section-header reveal" style="text-align: center;">
-        <span class="section-tag">// get_in_touch</span>
-        <h2 class="section-title">Let's Connect</h2>
-        <p style="color: var(--text-muted); margin-top: 1rem;">Available for networking consultations, surveillance systems, and security projects.</p>
-      </div>
-      <div class="contact-grid reveal">
-        <a href="https://wa.me/918590011604" target="_blank" class="glass contact-card">
-          <i class="fab fa-whatsapp"></i>
-          <h3>WhatsApp</h3>
-          <p>Chat with me</p>
-        </a>
-        <a href="mailto:vigneshvijaykofficial@gmail.com" class="glass contact-card">
-          <i class="fas fa-envelope"></i>
-          <h3>Email</h3>
-          <p>Get in touch</p>
-        </a>
-        <a href="https://github.com/VigneshVijayK" target="_blank" class="glass contact-card">
-          <i class="fab fa-github"></i>
-          <h3>GitHub</h3>
-          <p>Check my repos</p>
-        </a>
-        <a href="https://www.linkedin.com/in/vignesh-vijay-k/" target="_blank" class="glass contact-card">
-          <i class="fab fa-linkedin"></i>
-          <h3>LinkedIn</h3>
-          <p>Let's network</p>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- Back to Top -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
 
   <!-- Footer -->
   <footer>
     <div class="container">
-      <span class="footer-logo">VVK<span class="gradient-text">.</span></span>
-      <p class="copyright">&copy; 2025 Vignesh Vijay K. All rights reserved.</p>
-      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Network Security Engineer | IoT & Surveillance Specialist</p>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">VVK<span class="gradient-text">.</span></span>
+          <p>Network Security Engineer | IoT & Surveillance Specialist</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#credentials">Credentials</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/VigneshVijayK" target="_blank" rel="noopener noreferrer"
+            aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/vignesh-vijay-k/" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://wa.me/918590011604" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i
+              class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; <span id="year"></span> Vignesh Vijay K. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
