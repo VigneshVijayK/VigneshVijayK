@@ -18,7 +18,7 @@
   </script>
 
   <title>Secure Payment — Hyper-V Complete Disabler | Vignesh Vijay K</title>
-  <meta name="description" content="Secure payment page for Hyper-V Complete Disabler license. ₹99 one-time payment." />
+  <meta name="description" content="Purchase Hyper-V Complete Disabler license. Pay ₹99 via UPI and submit your details for verification." />
   <link rel="canonical" href="https://vigneshvijayk.github.io/VigneshVijayK/payment.html" />
 
   <link rel="icon" type="image/svg+xml"
@@ -120,6 +120,40 @@
       color: var(--accent);
     }
 
+    .upi-qr {
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      background: rgba(0, 212, 255, 0.05);
+      border: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+    .upi-qr h3 {
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .upi-qr img {
+      max-width: 200px;
+      margin: 0 auto 1rem;
+      border-radius: 0.75rem;
+      background: #fff;
+      padding: 0.5rem;
+    }
+    .upi-id {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: var(--accent);
+      padding: 0.5rem 1rem;
+      background: var(--bg);
+      border-radius: 0.5rem;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+    .upi-qr p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
     .secure-note {
       display: flex;
       align-items: center;
@@ -139,12 +173,87 @@
       margin-bottom: 1.5rem;
     }
 
-    .payment-form-card iframe {
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    .form-group label span {
+      color: var(--accent);
+    }
+    .form-group input,
+    .form-group textarea {
       width: 100%;
-      height: 650px;
+      padding: 0.9rem 1rem;
+      border-radius: 0.75rem;
       border: 1px solid var(--border);
-      border-radius: 1rem;
       background: var(--bg-card);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 0.95rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-muted);
+      opacity: 0.6;
+    }
+    .form-group small {
+      display: block;
+      margin-top: 0.35rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+    .form-group input[type="file"] {
+      padding: 0.75rem;
+      cursor: pointer;
+    }
+    .form-group input[type="file"]::-webkit-file-upload-button {
+      background: var(--accent);
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      margin-right: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 1.1rem;
+      font-size: 1.05rem;
+    }
+
+    .status-msg {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      font-size: 0.95rem;
+      display: none;
+    }
+    .status-msg.success {
+      display: block;
+      background: rgba(16, 185, 129, 0.15);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .status-msg.error {
+      display: block;
+      background: rgba(239, 68, 68, 0.15);
+      color: #ef4444;
+      border: 1px solid rgba(239, 68, 68, 0.3);
     }
 
     .payment-loading {
@@ -152,10 +261,9 @@
       align-items: center;
       justify-content: center;
       gap: 0.75rem;
-      padding: 3rem;
+      padding: 2rem;
       color: var(--text-muted);
     }
-
     .spinner {
       width: 1.5rem;
       height: 1.5rem;
@@ -164,19 +272,15 @@
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
     }
-
     @keyframes spin { to { transform: rotate(360deg); } }
 
     @media (max-width: 900px) {
       .payment-content { grid-template-columns: 1fr; }
-      .payment-form-card iframe { height: 700px; }
     }
-
     @media (max-width: 480px) {
       .payment-hero { padding: 8rem 0 2rem; }
       .order-summary-card,
       .payment-form-card { padding: 1.5rem; }
-      .payment-form-card iframe { height: 750px; }
     }
   </style>
 </head>
@@ -224,9 +328,9 @@
   <main id="main-content">
     <section class="payment-hero">
       <div class="container">
-        <span class="hero-tag reveal"><span class="badge-dot" aria-hidden="true"></span> SECURE CHECKOUT</span>
+        <span class="hero-tag reveal"><span class="badge-dot" aria-hidden="true"></span> SECURE PAYMENT</span>
         <h1 class="reveal">Complete Your <span class="gradient-text">Purchase</span></h1>
-        <p class="reveal">Review your order below and complete the secure payment form.</p>
+        <p class="reveal">Pay ₹99 via UPI and submit your details. We will verify your payment and email your license key.</p>
       </div>
     </section>
 
@@ -256,22 +360,63 @@
                 <span class="amount">₹99</span>
               </div>
             </div>
+
+            <div class="upi-qr">
+              <h3><i class="fas fa-qrcode" aria-hidden="true"></i> Scan & Pay via UPI</h3>
+              <img id="upiQr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi%3A%2F%2Fpay%3Fpa%3Dvigneshvijaykofficial%40okaxis%26pn%3DVignesh%20Vijay%20K%26am%3D99%26cu%3DINR%26tn%3DHyperV%20License" alt="UPI QR Code" />
+              <div class="upi-id">vigneshvijaykofficial@okaxis</div>
+              <p>Open any UPI app, scan the QR code, and pay ₹99</p>
+            </div>
+
+            <a href="upi://pay?pa=vigneshvijaykofficial@okaxis&pn=Vignesh%20Vijay%20K&am=99&cu=INR&tn=HyperV%20License" class="btn btn-primary" style="width: 100%; justify-content: center; margin-bottom: 1rem;">
+              <i class="fas fa-mobile-alt" aria-hidden="true"></i> Pay with UPI App
+            </a>
+
             <div class="secure-note">
               <i class="fas fa-shield-alt" aria-hidden="true"></i>
-              <span>Your payment is processed securely via our payment partner.</span>
+              <span>Your payment is verified manually before sending the license key.</span>
             </div>
           </div>
 
           <div class="payment-form-card glass">
-            <h2>Payment Details</h2>
-            <p>Click the button below to complete your payment securely on SurveyHeart. Your license key will be sent to your email after payment confirmation.</p>
-            <a href="https://form.svhrt.com/6a4405913fd706abb302e43a" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1.1rem; font-size: 1.1rem;">
-              <i class="fas fa-external-link-alt" aria-hidden="true"></i> Pay Securely ₹99
-            </a>
-            <div class="secure-note" style="margin-top: 1rem; justify-content: center;">
-              <i class="fas fa-lock" aria-hidden="true"></i>
-              <span>You will be redirected to SurveyHeart's secure payment page.</span>
-            </div>
+            <h2><i class="fas fa-file-alt" aria-hidden="true"></i> Submit Payment Details</h2>
+            <p>After paying ₹99 via UPI, fill the form below with your details and payment screenshot.</p>
+
+            <form id="licensePaymentForm">
+              <div class="form-group">
+                <label for="name">Full Name <span>*</span></label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name" />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email <span>*</span></label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com" />
+                <small>Your license key will be sent to this email.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number <span>*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="+91 98765 43210" />
+              </div>
+
+              <div class="form-group">
+                <label for="upiId">UPI Transaction ID / UTR Number <span>*</span></label>
+                <input type="text" id="upiId" name="upiId" required placeholder="e.g., 123456789012" />
+                <small>Find this in your UPI app payment history.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="screenshot">Payment Screenshot</label>
+                <input type="file" id="screenshot" name="screenshot" accept="image/*" />
+                <small>Upload screenshot of successful payment (optional but recommended for faster verification).</small>
+              </div>
+
+              <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i> Submit Details
+              </button>
+            </form>
+
+            <div id="statusMsg" class="status-msg"></div>
           </div>
         </div>
       </div>
@@ -307,5 +452,88 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    // Replace this with your deployed Google Apps Script Web App URL
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+
+    const form = document.getElementById('licensePaymentForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const statusMsg = document.getElementById('statusMsg');
+
+    function showStatus(message, type) {
+      statusMsg.textContent = message;
+      statusMsg.className = 'status-msg ' + type;
+    }
+
+    function toBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result.split(',')[1]);
+        reader.onerror = reject;
+      });
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusMsg.className = 'status-msg';
+
+      if (GOOGLE_SCRIPT_URL.includes('YOUR_SCRIPT_ID')) {
+        showStatus('Payment backend is not configured yet. Please contact the developer.', 'error');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner" style="width: 1rem; height: 1rem; border-width: 2px; margin-right: 0.5rem;"></span> Submitting...';
+
+      try {
+        const fileInput = document.getElementById('screenshot');
+        let screenshotBase64 = '';
+        let screenshotName = '';
+        let screenshotType = '';
+
+        if (fileInput.files && fileInput.files[0]) {
+          const file = fileInput.files[0];
+          if (file.size > 10 * 1024 * 1024) {
+            throw new Error('Screenshot must be less than 10MB');
+          }
+          screenshotBase64 = await toBase64(file);
+          screenshotName = file.name;
+          screenshotType = file.type;
+        }
+
+        const data = {
+          name: document.getElementById('name').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          upiId: document.getElementById('upiId').value.trim(),
+          screenshotBase64,
+          screenshotName,
+          screenshotType
+        };
+
+        const res = await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' }
+        });
+
+        const result = await res.json();
+
+        if (result.status === 'success') {
+          showStatus(result.message, 'success');
+          form.reset();
+          submitBtn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Submitted';
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (error) {
+        showStatus('Error: ' + error.message, 'error');
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane" aria-hidden="true"></i> Submit Details';
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
 </body>
 </html>
